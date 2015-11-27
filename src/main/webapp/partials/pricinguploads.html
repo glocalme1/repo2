@@ -1,0 +1,33 @@
+<form class="form-horizontal">
+	<h4>Upload Pricing</h4>
+	<br/>
+	<div class="form-group">
+		<div class="col-xs-12">
+			<div ng-show="upload.status == 'SUCCESS'">
+				<div class="alert alert-success">  
+				  <a class="close" data-dismiss="alert">x</a>  
+				  <strong>Pricing Details Uploaded Successfully : </strong>
+ 				  <strong>{{upload.message}}</strong>  				  
+				</div> 
+			</div>
+			<div ng-show="upload.status == 'ERROR'">	
+				<div class="alert alert-error">  
+					<a class="close" data-dismiss="alert">x</a>  
+					<strong>Error Uploading Pricing Details: </strong>  			
+					<strong>{{upload.message}}</strong>  
+				</div> 
+			</div>
+		</div>
+	</div>		
+	<div class="form-group">
+		<div class="row">
+			<label for="fileInput" class="control-label col-xs-4 inputsm">Upload Pricing File</label>
+			<div class="col-xs-6">
+				<input class="input-file" id="fileInput" type="file">  
+			</div>
+			<div class="col-xs-2">			
+				<button type="button" class="btn btn-primary btn-sm" ng-click="doPricingUpload();">Upload</button>
+			</div>
+		</div>
+	</div>	
+</form>

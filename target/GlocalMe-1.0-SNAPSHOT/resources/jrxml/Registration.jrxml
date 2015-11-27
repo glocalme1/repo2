@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Registration" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.9487171000000016"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="916"/>
+	<field name="fullName" class="java.lang.String"/>
+	<field name="idNumber" class="java.lang.String"/>
+	<field name="addressLine1" class="java.lang.String"/>
+	<field name="addressLine2" class="java.lang.String"/>
+	<field name="addressLine3" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="imei" class="java.lang.String"/>
+	<field name="mobileNumber" class="java.lang.String"/>
+	<field name="roc" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="22">
+			<staticText>
+				<reportElement x="8" y="-1" width="490" height="17" forecolor="#3300CC"/>
+				<textElement lineSpacing="Single">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Registration Form]]></text>
+			</staticText>
+			<line>
+				<reportElement x="8" y="18" width="543" height="1"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="81">
+			<image scaleImage="RealHeight">
+				<reportElement x="7" y="3" width="107" height="15"/>
+				<imageExpression class="java.lang.String"><![CDATA["header_images.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="379" y="3" width="172" height="68"/>
+				<textElement lineSpacing="Single">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BCC Technologies Pte Ltd
+141 Middle Road, #04-07
+GSM Building Singapore 188976
+Tel:(65) 63344388   Fax:(65) 63396030
+Inquiries: info@onewifi.global
+Website: www.onewifi.global]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="76" width="541" height="1"/>
+			</line>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="590">
+			<textField>
+				<reportElement x="167" y="-19" width="328" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fullName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="-19" width="151" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Full Name as in NRIC / Passport :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="167" y="-2" width="360" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<staticText>
+				<reportElement x="10" y="1" width="100" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[NRIC / Passport No.: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="286" y="1" width="59" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Contact No.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="19" width="275" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Employment / Work Permit / Student Pass / Special Pass No.: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="34" width="282" height="12"/>
+				<textElement lineSpacing="Single">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[(Applicable for Non-Singaporean & Permanent Residents only)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="56" width="123" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Address in Singapore	:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="122" width="100" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Email Address:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="136" width="200" height="14"/>
+				<textElement lineSpacing="Single">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[(Used for device registration)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="162" width="78" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Device IMEI No.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="294" y="162" width="51" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Device ID:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="117" y="17" width="165" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<staticText>
+				<reportElement x="11" y="189" width="156" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Notes / Terms and Conditions: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="204" width="500" height="12"/>
+				<textElement lineSpacing="Single">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[1.    Please be reminded that any discrepancies in the above information provided will result in device  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="25" y="217" width="485" height="12"/>
+				<textElement lineSpacing="Single">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[registration failure, or suspension of device services.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="231" width="500" height="12"/>
+				<textElement lineSpacing="Single">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[2.   Users can register the device via the OneWifi app, or visit our website: https://www.onewifi.global]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="243" width="485" height="12"/>
+				<textElement lineSpacing="Single">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Details on registration procedures can be found in the provided user manual.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="256" width="500" height="12"/>
+				<textElement lineSpacing="Single">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[3.    Users will receive an acknowledgement link for Device Activation through email, which will be sent ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="268" width="487" height="12"/>
+				<textElement lineSpacing="Single">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[by BCC Technologies after the pre-registration process.    ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="283" width="502" height="12"/>
+				<textElement lineSpacing="Single">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[4.   Users are reminded that they must be above 15 years old to register the device, and that the ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="295" width="487" height="12"/>
+				<textElement lineSpacing="Single">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[registration details provided in this form must be accurate. Failure to comply with the ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="307" width="487" height="12"/>
+				<textElement lineSpacing="Single">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[aforementioned terms will make the user liable for severe legal penalties under Singaporean law. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="324" width="502" height="12"/>
+				<textElement lineSpacing="Single">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[5.   Customers/Users may contact the BCC Technologies Customer Service Centre at Toll Free 1800-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="336" width="487" height="12"/>
+				<textElement lineSpacing="Single">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[1122-333, between 10:00am– 6:00pm, from Mon – Sat, for any inquiries pertaining to device  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="348" width="486" height="12"/>
+				<textElement lineSpacing="Single">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[registration and operation, product quality issues and customer support.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="372" width="495" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[I hereby agree to, am fully aware of, and completely understand the above, and have verified that the above ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="386" width="494" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[provided information is complete, accurate and up-to-date to the best of my knowledge:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="422" width="59" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Signature:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="323" y="422" width="44" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Date: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="463" width="145" height="14"/>
+				<textElement lineSpacing="Single">
+					<font isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Device Purchase from:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="477" width="191" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Authorisation and Registration Managers:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="491" width="49" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Name :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="507" width="49" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Telephone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="523" width="51" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[ Signature:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="539" width="50" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Date/Time: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="564" width="96" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Company ROC No.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="317" y="564" width="58" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Partner No.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="116" y="1" width="100" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{idNumber}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="135" y="87" width="373" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement x="345" y="17" width="165" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement x="286" y="33" width="222" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement x="135" y="105" width="373" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement x="135" y="69" width="373" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement x="116" y="136" width="342" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<textField>
+				<reportElement x="135" y="56" width="363" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{addressLine1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="135" y="70" width="363" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{addressLine2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="91" width="361" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{addressLine3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="114" y="122" width="344" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="91" y="177" width="191" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement x="352" y="176" width="156" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement x="78" y="437" width="239" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement x="370" y="437" width="138" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement x="76" y="504" width="239" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement x="76" y="520" width="239" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement x="77" y="536" width="239" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement x="77" y="553" width="239" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement x="106" y="578" width="209" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<line>
+				<reportElement x="375" y="578" width="148" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<textField>
+				<reportElement x="92" y="162" width="190" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{imei}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="347" y="2" width="100" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mobileNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="112" y="563" width="170" height="14"/>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{roc}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54">
+			<staticText>
+				<reportElement x="399" y="23" width="128" height="13" forecolor="#009999"/>
+				<textElement lineSpacing="Single">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[File: Form_A(A)_092015]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

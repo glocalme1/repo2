@@ -1,0 +1,188 @@
+<form class="form-horizontal" ng-show="isloggedin && role=='Retailer'">
+	<h4>Retailer Information</h4>
+	<br/>
+	<div class="form-group">
+		<label for="inputEmail" class="control-label col-xs-4">Retailer</label>
+		<div class="col-xs-8">
+			{{retailer.retailerId}}
+		</div>
+	</div>		
+	<div class="form-group">
+		<label for="inputEmail" class="control-label col-xs-4">Full Name</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control" id="inputEmail" placeholder="Full Name" ng-model="retailer.fullName">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="inputPassword" class="control-label col-xs-4">Email</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control" id="inputPassword" placeholder="Email" ng-model="retailer.email">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="idAddressPartner" class="control-label col-xs-4">Address</label>
+		<div class="col-xs-8">
+			<textarea ng-model="retailer.fullAddress" cols="40" rows="10" id="idAddressPartner"></textarea>
+		</div>
+	</div>			
+	<div class="form-group">
+		<div class="col-xs-offset-6 col-xs-2">
+			<button type="button" class="btn btn-primary btn-sm" ng-click="doRetailerUpdate();">Submit</button>
+		</div>
+		<div class="col-xs-2 col-xs-offset-2">
+			<button type="submit" class="btn btn-primary btn-sm">Cancel</button>
+		</div>				
+	</div>
+</form>
+<!-- Partner Personal Information - Start -->
+<form class="form-horizontal" ng-show="isloggedin && role=='Partner'">
+	<h4>{{ 'PERSONAL_PARTNER_HEADER' | translate }}</h4>
+	<br/>
+	<div class="form-group">
+		<div class="col-xs-12">
+			<div ng-show="partnerupdate.status == 'SUCCESS'">
+				<div class="alert alert-success">  
+				  <a class="close" data-dismiss="alert">x</a>  
+				  <strong>Partner Information updated successfully</strong>
+				</div> 
+			</div>
+			<div ng-show="partnerupdate.status == 'FAILED'">	
+				<div class="alert alert-error">  
+					<a class="close" data-dismiss="alert">x</a>  
+					<strong>Partner Update Failed: </strong>  			
+					<strong>{{partnerupdate.msg}}</strong>  
+				</div> 
+			</div>
+		</div>
+	</div>		
+	<div class="form-group">
+		<label class="control-label col-xs-4">{{ 'PERSONAL_PARTNER_ID' | translate }}</label>
+		<div class="col-xs-8">
+			{{partner.partnerId}}
+		</div>
+	</div>	
+	<div class="form-group">
+		<label for="idFullNamePartner" class="control-label col-xs-4">{{ 'PERSONAL_PARTNER_FIRST_NAME' | translate }}</label>
+		<div class="col-xs-8">
+			<input id="idFullNamePartner" type="text" class="form-control" placeholder="First Name" maxlength="50" ng-model="partner.firstName">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="idLastNamePartner" class="control-label col-xs-4">{{ 'PERSONAL_PARTNER_LAST_NAME' | translate }}</label>
+		<div class="col-xs-8">
+			<input id="idLastNamePartner" type="text" class="form-control"  ng-model="partner.lastName" maxlength="50" placeholder="Last Name">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="idEmailPartner" class="control-label col-xs-4">{{ 'PERSONAL_PARTNER_EMAIL' | translate }}</label>
+		<div class="col-xs-8">
+			<input id="idEmailPartner" type="text" class="form-control" ng-model="partner.email" maxlength="50" placeholder="Email">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="idAddressPartner" class="control-label col-xs-4">{{ 'PERSONAL_PARTNER_ADDRESS' | translate }}</label>
+		<div class="col-xs-8">
+			<textarea id="idAddressPartner" ng-model="partner.fullAddress" cols="40" rows="10" maxlength="100" placeholder="Address"></textarea>
+		</div>
+	</div>	
+	<div class="form-group">
+		<div class="col-xs-offset-6 col-xs-2">
+			<button type="button" class="btn btn-primary btn-sm" ng-click="doPartnerUpdate();">{{ 'PERSONAL_PARTNER_SUBMIT' | translate }}</button>
+		</div>
+		<div class="col-xs-2 col-xs-offset-2">
+			<button type="submit" class="btn btn-primary btn-sm" ng-click="doPartnerUpdateCancel();">{{ 'PERSONAL_PARTNER_CANCEL' | translate }}</button>
+		</div>				
+	</div>
+</form>
+<!-- Partner Personal Information - End -->
+<form class="form-horizontal" ng-show="isloggedin && role=='User'">
+	<h4>Customer Information</h4>
+	<br/>
+	<div class="form-group">
+		<label for="inputEmail" class="control-label col-xs-4">Full Name</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control" id="inputEmail" placeholder="First Name" ng-model="customer.fullName">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="retailer.id" class="control-label col-xs-4 inputsm">Id Type</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="retailer.id" ng-model="customer.idType" placeholder="ID Card / Passport Number">
+		</div>
+	</div>		
+	<div class="form-group">
+		<label for="retailer.id" class="control-label col-xs-4 inputsm">Identity Number</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="retailer.id" ng-model="customer.idNumber" placeholder="ID Card / Passport Number">
+		</div>
+	</div>		
+	<div class="form-group">
+		<label for="retailer.id" class="control-label col-xs-4 inputsm">IMEI</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="retailer.id" ng-model="customer.imei" placeholder="ID Card / Passport Number">
+		</div>
+	</div>		
+	<div class="form-group">
+		<label for="idEmailPartner" class="control-label col-xs-4">Email</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control" id="idEmailPartner" ng-model="customer.email" placeholder="Email">
+		</div>
+	</div>	
+	<div class="form-group">
+		<label for="retailer.addressLine1" class="control-label col-xs-4 inputsm">Address Line 1</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="retailer.addressLine1" data-ng-model="customer.addressLine1" placeholder="Address Line 1">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="retailer.addressLine2" class="control-label col-xs-4 inputsm">Address Line 2</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="retailer.addressLine2" data-ng-model="customer.addressLine2" placeholder="Address Line 2">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="retailer.addressLine3" class="control-label col-xs-4 inputsm">Address Line 3</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="retailer.addressLine3" ng-model="customer.addressLine3" placeholder="Address Line 3">
+		</div>
+	</div>	
+	<div class="form-group">
+		<label for="retailer.mobileNumber" class="control-label col-xs-4 inputsm">Contact No</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="retailer.mobileNumber" ng-model="customer.mobileNumber" placeholder="Mobile">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="inputPassword" class="control-label col-xs-4 inputsm">City</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="inputPassword" placeholder="City" ng-model="customer.city">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="inputPassword" class="control-label col-xs-4 inputsm">Province/State</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="inputPassword" placeholder="Province/State" ng-model="customer.state">
+		</div>
+	</div>			
+	<div class="form-group">
+		<label for="inputPassword" class="control-label col-xs-4 inputsm">Country</label>
+		<div class="col-xs-8">
+			<country-select data-ng-model="country"></country-select>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="retailer.zipCode" class="control-label col-xs-4 inputsm">Zip Code</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="retailer.zipCode" ng-model="customer.zipCode" placeholder="Zip Code">
+		</div>
+	</div>			
+	<div class="form-group">
+		<div class="col-xs-offset-6 col-xs-2">
+			<button type="button" class="btn btn-primary btn-sm" ng-click="doCustomerUpdate();">Submit</button>
+		</div>
+		<div class="col-xs-2 col-xs-offset-2">
+			<button type="submit" class="btn btn-primary btn-sm">Cancel</button>
+		</div>				
+	</div>
+</form>
+<!-- Customer Personal Information - End -->

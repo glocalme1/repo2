@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 23, 2015 4:30:43 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.onewifi.beans.Customerdevice" table="customerdevice" catalog="onewifi" optimistic-lock="version">
+        <composite-id name="id" class="com.onewifi.beans.CustomerdeviceId">
+            <key-property name="customerId" type="string">
+                <column name="CustomerId" length="60" />
+            </key-property>
+            <key-property name="deviceId" type="string">
+                <column name="DeviceId" length="20" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="customermaster" class="com.onewifi.beans.Customermaster" update="false" insert="false" fetch="select">
+            <column name="CustomerId" length="60" not-null="true" />
+        </many-to-one>
+        <many-to-one name="devicemaster" class="com.onewifi.beans.Devicemaster" update="false" insert="false" fetch="select">
+            <column name="DeviceId" length="20" not-null="true" />
+        </many-to-one>
+        <many-to-one name="statuscodemaster" class="com.onewifi.beans.Statuscodemaster" fetch="select">
+            <column name="StatusCode" length="3" not-null="true" />
+        </many-to-one>
+        <property name="endTimeQueried" type="timestamp">
+            <column name="EndTimeQueried" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

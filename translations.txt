@@ -1,0 +1,121 @@
+==ACCOUNT_SUMMARY
+$translateProvider.translations('en', {
+	ACCOUNT_SUMMARY: 'Account Summary',
+	ACCOUNT_SUMMARY_LATEST_LOGIN_TIME:'Latest Login Time',
+	ACCOUNT_SUMMARY_LATEST_LOGOUT_TIME:'Latest Logout Time',
+	ACCOUNT_SUMMARY_LATEST_POSITION:'Latest Position',
+	ACCOUNT_SUMMARY_LATEST_LAST_TOPUP_AMOUNT:'Last Topup Amount',
+	ACCOUNT_SUMMARY_CONSUMED_AMOUNT:'Consumed Amount',
+	ACCOUNT_SUMMARY_TOTAL_FLOW_IN_KB:'Total Flow In KB'
+});
+$translateProvider.translations('ch', {
+	ACCOUNT_SUMMARY: 'Account Summary',
+	ACCOUNT_SUMMARY_LATEST_LOGIN_TIME:'Latest Login Time',
+	ACCOUNT_SUMMARY_LATEST_LOGOUT_TIME:'Latest Logout Time',
+	ACCOUNT_SUMMARY_LATEST_POSITION:'Latest Position',
+	ACCOUNT_SUMMARY_LATEST_LAST_TOPUP_AMOUNT:'Last Topup Amount',
+	ACCOUNT_SUMMARY_CONSUMED_AMOUNT:'Consumed Amount',
+	ACCOUNT_SUMMARY_TOTAL_FLOW_IN_KB:'Total Flow In KB'
+});
+
+
+==Activate Device
+
+$translateProvider.translations('en', {
+	ACTIVATE_DEVICE:'Activate Device',
+	ACTIVATE_DEVICE_LOGIN:'Login',
+	ACTIVATE_DEVICE_FULL_NAME:'Full Name',
+	ACTIVATE_DEVICE_IMEI_NUMBER:'IMEI Number',
+	ACTIVATE_DEVICE_SERIAL_NUMBER:'Serial Number',
+	ACTIVATE_DEVICE_ACTIVATE:'Activate',
+	ACTIVATE_DEVICE_CANCEL:'Cancel',
+	ACTIVATE_DEVICE_ERROR_ACTIVATING_DEVICE:'Error Activating Device'
+});
+$translateProvider.translations('ch', {
+	ACTIVATE_DEVICE:'Activate Device',
+	ACTIVATE_DEVICE_LOGIN:'Login',
+	ACTIVATE_DEVICE_FULL_NAME:'Full Name',
+	ACTIVATE_DEVICE_IMEI_NUMBER:'IMEI Number',
+	ACTIVATE_DEVICE_SERIAL_NUMBER:'Serial Number',
+	ACTIVATE_DEVICE_ACTIVATE:'Activate',
+	ACTIVATE_DEVICE_CANCEL:'Cancel',
+	ACTIVATE_DEVICE_ERROR_ACTIVATING_DEVICE:'Error Activating Device'
+});
+
+==Set Password
+$translateProvider.translations('en', {
+	SET_PASSWORD:'Set Password',
+	SET_PASSWORD_LOGIN:'Login',
+	SET_PASSWORD_FULL_NAME:'Full Name',
+	SET_PASSWORD_ERROR:'Error During User Setup',
+	SET_PASSWORD_USER_SETUP_SUCCEESSFULL:'User Setup Successfully - Proceed to Login',
+	SET_PASSWORD_NEW_PASSWORD:'New Password',
+	SET_PASSWORD_CONFIRM:'Confirm Password',
+	SET_PASSWORD_SUBMIT:'Submit',
+	SET_PASSWORD_CANCEL:'Cancel'
+});
+$translateProvider.translations('ch', {
+	SET_PASSWORD:'Set Password',
+	SET_PASSWORD_LOGIN:'Login',
+	SET_PASSWORD_FULL_NAME:'Full Name',
+	SET_PASSWORD_ERROR:'Error During User Setup',
+	SET_PASSWORD_USER_SETUP_SUCCEESSFULL:'User Setup Successfully - Proceed to Login',
+	SET_PASSWORD_NEW_PASSWORD:'New Password',
+	SET_PASSWORD_CONFIRM:'Confirm Password',
+	SET_PASSWORD_SUBMIT:'Submit',
+	SET_PASSWORD_CANCEL:'Cancel'
+});
+
+==Buy Device
+$translateProvider.translations('en', {
+	BUY_DEVICE:'Buy Device',
+	BUY_DEVICE_IDENTITY_TYPE:'Identity Type',
+	BUY_DEVICE_NRIC:'NRIC',
+	BUY_DEVICE_PASSPORT:'Passport',
+	BUY_DEVICE_OTHERS:'Others',
+	BUY_DEVICE_UPLOAD_IMAGE:'Upload Image',
+	BUY_DEVICE_SCAN:'Scan',
+	BUY_DEVICE_COY_ROY:'COY ROC #',
+	BUY_DEVICE_NO:'No',
+	BUY_DEVICE_EMAIL:'Email',
+	BUY_DEVICE_IMEI_NO:'IMEI No',
+	BUY_DEVICE_OTHERS:'Employment / Work Permit / Student Pass / Spl Pass No',
+	BUY_DEVICE_FULLNAME:'Full Name',
+	BUY_DEVICE_ADDR_1:'Address Line 1',
+	BUY_DEVICE_ADDR_2:'Address Line 2',
+	BUY_DEVICE_ADDR_3:'Address Line 3',
+	BUY_DEVICE_CONTACT:'Contact No',
+	BUY_DEVICE_CITY:'City',
+	BUY_DEVICE_PROVINCE:'Province/State',
+	BUY_DEVICE_COUNTRY:'Country',
+	BUY_DEVICE_ZIPCODE:'Zip Code',
+	BUY_DEVICE_SUBMIT:'Submit',
+	BUY_DEVICE_PRINT:'Print',
+	BUY_DEVICE_CANCEL:'Cancel'
+});
+$translateProvider.translations('ch', {
+	BUY_DEVICE:'Buy Device',
+	BUY_DEVICE_IDENTITY_TYPE:'Identity Type',
+	BUY_DEVICE_NRIC:'NRIC',
+	BUY_DEVICE_PASSPORT:'Passport',
+	BUY_DEVICE_OTHERS:'Others',
+	BUY_DEVICE_UPLOAD_IMAGE:'Upload Image',
+	BUY_DEVICE_SCAN:'Scan',
+	BUY_DEVICE_COY_ROY:'COY ROC #',
+	BUY_DEVICE_NO:'No',
+	BUY_DEVICE_EMAIL:'Email',
+	BUY_DEVICE_IMEI_NO:'IMEI No',
+	BUY_DEVICE_OTHERS:'Employment / Work Permit / Student Pass / Spl Pass No',
+	BUY_DEVICE_FULLNAME:'Full Name',
+	BUY_DEVICE_ADDR_1:'Address Line 1',
+	BUY_DEVICE_ADDR_2:'Address Line 2',
+	BUY_DEVICE_ADDR_3:'Address Line 3',
+	BUY_DEVICE_CONTACT:'Contact No',
+	BUY_DEVICE_CITY:'City',
+	BUY_DEVICE_PROVINCE:'Province/State',
+	BUY_DEVICE_COUNTRY:'Country',
+	BUY_DEVICE_ZIPCODE:'Zip Code',
+	BUY_DEVICE_SUBMIT:'Submit',
+	BUY_DEVICE_PRINT:'Print',
+	BUY_DEVICE_CANCEL:'Cancel'
+});

@@ -1,0 +1,42 @@
+<!--
+<script type="text/javascript">
+  function drawRegionsMap() {
+    google.load("visualization", "1", {packages:["geochart"]});
+  	google.setOnLoadCallback(drawRegionsMap);
+
+    var data = google.visualization.arrayToDataTable([
+      ['Country', 'Popularity'],
+      ['Bangaladesh', 'Bangladesh ($0.001/MB)'],
+      ['United States', '300'],
+      ['Brazil', '400'],
+      ['Canada', '500'],
+      ['France', '600'],
+      ['RU', '700']
+    ]);
+	
+	var options = {
+		 backgroundColor: {fill:'#FFFFFF',stroke:'#FFFFFF' ,strokeWidth:0 },
+		 legend: 'none',	
+		 backgroundColor: {fill:'#FFFFFF',stroke:'#FFFFFF' ,strokeWidth:0 },	
+		 datalessRegionColor: '#F5F0E7',
+		 displayMode: 'regions', 
+		 enableRegionInteractivity: 'true', 
+		 resolution: 'countries',
+		 //sizeAxis: {minValue: 1, maxValue:1,minSize:10,  maxSize: 10},
+		 region:'world',
+		 keepAspectRatio: true,
+		 width:600,
+		 height:400,
+		 tooltip: {textStyle: {color: '#444444'}, trigger:'focus'}	
+	 };
+	options['colors'] = ['#4bb5f3', '#FADC41', '#c44949', '#d74a12', '#0e9a0e', '#55c2ac', '#7c4b91', '#fadc41', '#0d6cca', '#7c4897'];
+    var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+    chart.draw(data, options);
+  }
+  drawRegionsMap();
+</script>
+-->
+<div>
+Coverage Page will come here
+</div>

@@ -1,0 +1,32 @@
+<div class="col-xs-12 col-sm-07">
+	<section id="login">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="form-wrap">
+					<div ng-show="login.status == 'FAILED'">Error During Login: Invalid Username/Password</div>
+					<div ng-show="login.status == 'SUCCESS'">Logged In Successfully</div>				
+					<img src="resources/images/OneWifi002.jpg" height="100" width="100"/><span style="color: green"><b>Log in with your email account</b></span>
+					<form role="form" action="javascript:;" method="post" id="login-form" autocomplete="off">
+						<div class="form-group">
+							<label for="login.username" class="sr-only">Email</label>
+							<input type="text" name="email" id="login.username" class="form-control" data-ng-model="username" placeholder="email@example.com">
+						</div>
+						<div class="form-group">
+							<label for="login.password" class="sr-only">Password</label>
+							<input type="password" name="key" id="login.password" class="form-control" data-ng-model="password" placeholder="Password">
+						</div>
+						<!--
+						<div class="checkbox">
+							<span class="character-checkbox" onclick="showPassword()"></span>
+							<span class="label">Show password</span>
+						</div>
+						-->
+						<input type="button" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Log in" ng-click="doLogin();">
+					</form>
+					<a href="javascript:;" class="forget" data-toggle="modal" data-target=".forget-modal">Forgot your password?</a>
+					<hr>
+				</div> <!-- form-wrap -->
+			</div> <!-- /.col-xs-12 -->
+		</div> <!-- /.row -->
+	</section>
+</div>

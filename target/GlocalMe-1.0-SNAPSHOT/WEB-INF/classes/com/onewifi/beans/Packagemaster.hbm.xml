@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 23, 2015 4:30:43 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.onewifi.beans.Packagemaster" table="packagemaster" catalog="onewifi" optimistic-lock="version">
+        <id name="packageTypeCode" type="string">
+            <column name="PackageTypeCode" length="3" />
+            <generator class="assigned" />
+        </id>
+        <property name="packageTypeName" type="string">
+            <column name="PackageTypeName" length="20" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

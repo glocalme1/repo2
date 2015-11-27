@@ -1,0 +1,24 @@
+<h4>Topup History</h4>
+<div id="exTab1">
+	<div class="tab-content clearfix">
+		<div class="tab-pane active" id="1a">
+			<form class="form-horizontal">	
+				<div class="row">
+					<div class="form-group">
+						<div>
+						<label for="inputEmail" class="control-label">Start Time : </label>
+						<input type="text" datepicker-popup ng-model="startDt" show-weeks="false" show-button-bar="false" is-open="status.opened" min-date="minDate" max-date="'2020-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" /><button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+						<label for="inputEmail" class="control-label">End Time : </label>
+						<input type="text" datepicker-popup ng-model="endDt" show-weeks="false" is-open="status.opened1" show-button-bar="false" min-date="minDate" max-date="'2020-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" /><button type="button" class="btn btn-default" ng-click="open1($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+						<button type="submit" class="btn btn-primary btn-sm" ng-click="doEnquire();">Inquire</button>
+						</div>
+					</div>						
+				</div>
+				<div class="row">
+					<div id="grid1" ui-grid="topupgridOptions" ui-grid-resize-columns class="grid"></div>
+				</div>
+			</form>				
+		</div>
+	</div>
+</div>			
+

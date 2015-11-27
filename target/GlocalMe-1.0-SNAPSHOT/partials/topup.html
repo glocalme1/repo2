@@ -1,0 +1,78 @@
+<form class="form-horizontal">
+	<h4>Topup</h4>
+	<br/>
+	<div class="form-group">
+		<div class="col-xs-12">
+			<div ng-show="topup.status == 'SUCCESS'">
+				<div class="alert alert-success">  
+				  <a class="close" data-dismiss="alert">x</a>  
+				  <strong>Topup Done Successfully</strong>
+				</div> 
+			</div>
+			<div ng-show="topup.status == 'FAILED'">	
+				<div class="alert alert-error">  
+					<a class="close" data-dismiss="alert">x</a>  
+					<strong>Error during Topup: </strong>  			
+					<strong>{{topup.message}}</strong>  
+				</div> 
+			</div>
+		</div>
+	</div>		
+	<div class="form-group">
+			<label for="inputEmail" class="control-label col-xs-4 inputsm">Topup Type</label>
+			<div class="col-xs-6">
+				<label class="btn btn-default">
+					<input name="cssPre input-sm" id="css2" type="radio" value="1" data-ng-model="type" ng-click="resetType();"> Pay-As-Go
+				</label>&nbsp;&nbsp;&nbsp;
+				<label class="btn btn-default">
+					<input name="cssPre input-sm" id="css3" type="radio" value="2" data-ng-model="type" ng-click="resetType();"> Packages
+				</label>&nbsp;&nbsp;&nbsp;
+			</div>
+	</div>	
+	<div class="form-group" ng-show="(type == '2')">
+		<label for="retailer.id" class="control-label col-xs-4 inputsm">Countries</label>
+		<div class="col-xs-8">
+			<select id="country" style=”width: 250px;” data-ng-model="selectedCountry" ng-change="selectCountry();">
+			<option value="-1">[Select]</option>
+			<option data-ng-repeat="item in countrylistForPackages track by $index"
+				value="{{item}}">{{item}}</option>
+			</select> 
+		</div>
+	</div>	
+	<div class="form-group" ng-show="(type == '2')">
+		<label for="retailer.id" class="control-label col-xs-4 inputsm">Available Packages</label>
+		<div class="col-xs-8">
+			<select id="country" style=”width: 350px;” data-ng-model="selectedPackage" ng-change="selectPackage();">
+			<option value="-1">[Select]</option>
+			<option data-ng-repeat="packageItem in packageListForCountry track by $index"
+				value="{{packageItem}}">{{packageItem}}</option>
+			</select> 
+		</div>
+	</div>		
+	<div class="form-group" ng-show="(type == '2')">
+		<label for="retailer.id" class="control-label col-xs-4 inputsm">Package Price</label>
+		<div class="col-xs-8">
+			{{packagecost}}
+		</div>
+	</div>		
+	<div class="form-group" ng-show="(type == '1')">
+		<label for="retailer.id" class="control-label col-xs-4 inputsm">Topup-up Amount</label>
+		<div class="col-xs-6">
+			<input id="topupAmount" class="form-control input-sm" type="text" data-ng-model="topupAmount">  
+		</div>
+		<div class="col-xs-2">			
+			<button type="button" class="btn btn-primary btn-sm" ng-click="doShowRates();">Show Rates</button>
+		</div>
+	</div>	
+	<div class="form-group">
+		<div class="col-xs-offset-6 col-xs-2">
+			<button type="button" class="btn btn-primary btn-sm" ng-click="doTopup();">Topup</button>
+		</div>
+		<div class="col-xs-2 col-xs-offset-2">
+			<button type="submit" class="btn btn-primary btn-sm">Cancel</button>
+		</div>				
+	</div>		
+</form>
+
+
+ 

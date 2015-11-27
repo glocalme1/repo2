@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 23, 2015 4:30:43 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.onewifi.beans.Pricing" table="pricing" catalog="onewifi" optimistic-lock="version">
+        <composite-id name="id" class="com.onewifi.beans.PricingId">
+            <key-property name="pricingId" type="string">
+                <column name="PricingId" length="20" />
+            </key-property>
+            <key-property name="validDate" type="timestamp">
+                <column name="ValidDate" length="19" />
+            </key-property>
+            <key-property name="productCode" type="string">
+                <column name="ProductCode" length="10" />
+            </key-property>
+        </composite-id>
+        <property name="country" type="string">
+            <column name="Country" length="30" not-null="true" />
+        </property>
+        <property name="payAsYouGo" type="java.lang.Double">
+            <column name="PayAsYouGo" precision="22" scale="0" />
+        </property>
+        <property name="daily150mb" type="string">
+            <column name="Daily_150MB" length="50" />
+        </property>
+        <property name="days7450mb" type="string">
+            <column name="Days_7_450mb" length="50" />
+        </property>
+        <property name="days301gb" type="string">
+            <column name="Days_30_1gb" length="50" />
+        </property>
+        <property name="days902gb" type="string">
+            <column name="Days_90_2gb" length="50" />
+        </property>
+        <property name="days1803gb" type="string">
+            <column name="Days_180_3gb" length="50" />
+        </property>
+        <property name="day1Pass" type="string">
+            <column name="Day_1_Pass" length="50" />
+        </property>
+        <property name="days5Pass" type="string">
+            <column name="Days_5_Pass" length="50" />
+        </property>
+        <property name="days10Pass" type="string">
+            <column name="Days_10_Pass" length="50" />
+        </property>
+        <property name="days20Pass" type="string">
+            <column name="Days_20_Pass" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

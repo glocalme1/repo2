@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 23, 2015 4:30:43 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.onewifi.beans.Statuscodemaster" table="statuscodemaster" catalog="onewifi" optimistic-lock="version">
+        <id name="statusCode" type="string">
+            <column name="StatusCode" length="3" />
+            <generator class="assigned" />
+        </id>
+        <property name="statusDetail" type="string">
+            <column name="StatusDetail" length="20" not-null="true" />
+        </property>
+        <set name="customermasters" table="customermaster" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="StatusCode" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.onewifi.beans.Customermaster" />
+        </set>
+        <set name="customerdevices" table="customerdevice" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="StatusCode" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.onewifi.beans.Customerdevice" />
+        </set>
+        <set name="devicemasters" table="devicemaster" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="StatusCode" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.onewifi.beans.Devicemaster" />
+        </set>
+    </class>
+</hibernate-mapping>

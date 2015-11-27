@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">onewifi</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/onewifi?zeroDateTimeBehavior=convertToNull</property>
+        <property name="hibernate.connection.username">onewifi</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.search.autoregister_listeners">false</property>
+        <property name="hibernate.validator.apply_to_ddl">false</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property> 
+        <mapping resource="com/onewifi/beans/Customermaster.hbm.xml" />
+        <mapping resource="com/onewifi/beans/Retailermaster.hbm.xml" />
+        <mapping resource="com/onewifi/beans/Customertopup.hbm.xml" />
+        <mapping resource="com/onewifi/beans/Keyvaluemaster.hbm.xml" />
+        <mapping resource="com/onewifi/beans/Devicemaster.hbm.xml" />
+        <mapping resource="com/onewifi/beans/Partnermaster.hbm.xml" />
+        <mapping resource="com/onewifi/beans/Pricing.hbm.xml" />
+        <mapping resource="com/onewifi/beans/Threshold.hbm.xml" />
+        <mapping resource="com/onewifi/beans/Userrole.hbm.xml" />
+        <mapping resource="com/onewifi/beans/Packagemaster.hbm.xml" />
+        <mapping resource="com/onewifi/beans/Retailerdevice.hbm.xml" />
+        <mapping resource="com/onewifi/beans/Customerbalance.hbm.xml" />
+        <mapping resource="com/onewifi/beans/Statuscodemaster.hbm.xml" />
+        <mapping resource="com/onewifi/beans/Topuptypes.hbm.xml" />
+        <mapping resource="com/onewifi/beans/Customerdevice.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>New User Activation</title>
+	</head>
+	<body>
+	<br/>
+	<div>Dear ${identityScanDto.fullName},</div>
+	<br/>
+	<p>
+	Thanks for choosing OneWifi. Please do the device activation be clicking Register <a href="${baseurl}${encryptedlogin}">here</a>.
+	(or)<br/><br/>
+	Paste the below the URL:<br/> ${baseurl}${encryptedlogin} in the browser window<br/><br/>
+	Thanks,<br/>
+	OneWifi
+	</p>
+	</body>
+</html>

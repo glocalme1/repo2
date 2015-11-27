@@ -1,0 +1,147 @@
+<form class="form-horizontal">
+	<h4>{{'BUY_DEVICE' | translate}}</h4>
+	<br/>
+	<div class="form-group">
+		<div class="col-xs-12">
+			<div ng-show="buy.status == 'SUCCESS'">
+				<div class="alert alert-success">  
+				  <a class="close" data-dismiss="alert">x</a>  
+				  <strong>Devices Bought Successfully</strong>
+				</div> 
+			</div>
+			<div ng-show="buy.status == 'FAILED'">	
+				<div class="alert alert-error">  
+					<a class="close" data-dismiss="alert">x</a>  
+					<strong>Device Buy Failed: </strong>  			
+					<strong>{{buy.msg}}</strong>  
+				</div> 
+			</div>
+		</div>
+	</div>	
+	<div class="form-group">
+			<label for="inputEmail" class="control-label col-xs-4 inputsm">{{'BUY_DEVICE_IDENTITY_TYPE' | translate}}</label>
+			<div class="col-xs-6">
+				<label class="btn btn-default">
+					<input name="cssPre input-sm" id="css2" type="radio" value="NRIC" data-ng-model="retailer.idType"> {{'BUY_DEVICE_NRIC' | translate}}
+				</label>&nbsp;&nbsp;&nbsp;
+				<label class="btn btn-default">
+					<input name="cssPre input-sm" id="css3" type="radio" checked="checked" value="Passport" data-ng-model="retailer.idType"> {{'BUY_DEVICE_PASSPORT' | translate}}
+				</label>&nbsp;&nbsp;&nbsp;
+				<label class="btn btn-default">
+					<input name="cssPre input-sm" id="css3" type="radio" checked="checked" value="Others" data-ng-model="retailer.idType"> {{'BUY_DEVICE_OTHERS' | translate}}
+				</label>				
+			</div>
+	</div>
+	
+	<div class="form-group">
+		<div class="row">
+			<label for="fileInput" class="control-label col-xs-4 inputsm">{{'BUY_DEVICE_UPLOAD_IMAGE' | translate}}</label>
+			<div class="col-xs-6">
+				<input class="input-file" id="fileInput" type="file">  
+			</div>
+			<div class="col-xs-2">			
+				<button type="button" class="btn btn-primary btn-sm" ng-click="doScan();">{{'BUY_DEVICE_SCAN' | translate}} {{retailer.idType}}</button>
+			</div>
+		</div>
+	</div>	
+
+	<div class="form-group">
+		<label for="retailer.id" class="control-label col-xs-4 inputsm">{{'BUY_DEVICE_COY_ROY' | translate}}</label>
+		<div class="col-xs-8">
+			{{roc}}
+		</div>
+	</div>	
+	<div class="form-group">
+		<label for="retailer.id" class="control-label col-xs-4 inputsm">{{retailer.idType}} {{'BUY_DEVICE_NO' | translate}}</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="retailer.id" ng-model="retailer.id" placeholder="ID Card / Passport Number">
+		</div>
+	</div>	
+	<div class="form-group">
+		<label for="retailer.email" class="control-label col-xs-4 inputsm">{{'BUY_DEVICE_EMAIL' | translate}}</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="retailer.email" ng-model="retailer.email" placeholder="Email" maxlength="50">
+		</div>
+	</div>		
+	<div class="form-group">
+		<label for="retailer.imei" class="control-label col-xs-4 inputsm">{{'BUY_DEVICE_IMEI_NO' | translate}}</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="retailer.imei" ng-model="retailer.imei" placeholder="IMEI No" maxlength="25">
+		</div>
+	</div>	
+	<!--
+	<div class="form-group">
+		<label for="retailer.idNumber" class="control-label col-xs-4">{{'BUY_DEVICE_OTHERS' | translate}}</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control" id="retailer.idNumber" placeholder="ID Card / Passport Number" ng-model="retailer.idNumber">
+		</div>
+	</div>	
+	-->
+	<div class="form-group">
+			<label for="retailer.fullName" class="control-label col-xs-4 inputsm">{{'BUY_DEVICE_FULLNAME' | translate}} {{retailer.idType}}</label>
+			<div class="col-xs-8">
+				<input type="text" class="form-control input-sm" id="retailer.fullName" placeholder="Full Name" maxlength="50" data-ng-model="retailer.fullName">
+			</div>
+	</div>	
+
+	<div class="form-group">
+		<label for="retailer.addressLine1" class="control-label col-xs-4 inputsm">{{'BUY_DEVICE_ADDR_1' | translate}}</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="retailer.addressLine1" data-ng-model="retailer.addressLine1" maxlength="30" placeholder="Address Line 1">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="retailer.addressLine2" class="control-label col-xs-4 inputsm">{{'BUY_DEVICE_ADDR_2' | translate}}</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="retailer.addressLine2" data-ng-model="retailer.addressLine2" maxlength="30" placeholder="Address Line 2">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="retailer.addressLine3" class="control-label col-xs-4 inputsm">{{'BUY_DEVICE_ADDR_3' | translate}}</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="retailer.addressLine3" ng-model="retailer.addressLine3" maxlength="30" placeholder="Address Line 3">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="retailer.mobileNumber" class="control-label col-xs-4 inputsm">{{'BUY_DEVICE_CONTACT' | translate}}</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="retailer.mobileNumber" ng-model="retailer.mobileNumber" maxlength="12" placeholder="Mobile">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="inputPassword" class="control-label col-xs-4 inputsm">{{'BUY_DEVICE_CITY' | translate}}</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="inputPassword" placeholder="City" maxlength="25" ng-model="retailer.city">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="inputPassword" class="control-label col-xs-4 inputsm">{{'BUY_DEVICE_PROVINCE' | translate}}</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="inputPassword" placeholder="Province/State" maxlength="20" ng-model="retailer.state">
+		</div>
+	</div>			
+	<div class="form-group">
+		<label for="inputPassword" class="control-label col-xs-4 inputsm">{{'BUY_DEVICE_COUNTRY' | translate}}</label>
+		<div class="col-xs-8">
+			<country-select data-ng-model="retailer.country"></country-select>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="retailer.zipCode" class="control-label col-xs-4 inputsm">{{'BUY_DEVICE_ZIPCODE' | translate}}</label>
+		<div class="col-xs-8">
+			<input type="text" class="form-control input-sm" id="retailer.zipCode" ng-model="retailer.zipCode" maxlength="8" placeholder="Zip Code">
+		</div>
+	</div>				
+	<div class="form-group">
+		<div class="col-xs-offset-6 col-xs-2">
+			<button type="button" class="btn btn-primary btn-sm" ng-click="saveCustomer();">{{'BUY_DEVICE_SUBMIT' | translate}}</button>
+		</div>
+		<div class="col-xs-2">
+			<button type="button" class="btn btn-primary btn-sm" ng-click="print();">{{'BUY_DEVICE_PRINT' | translate}}</button>
+		</div>			
+		<div class="col-xs-2">
+			<button type="button" class="btn btn-primary btn-sm">{{'BUY_DEVICE_CANCEL' | translate}}</button>
+		</div>				
+	</div>
+</form>

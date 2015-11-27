@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html ng-app="glocalMeApp">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />  	
+    <link rel="stylesheet" href="webjars/bootstrap/3.2.0/css/bootstrap.css">
+    <link rel="stylesheet" href="resources/css/glocalme.css">
+    <link rel="stylesheet" href="webjars/ui-grid/3.0.7/ui-grid.css" />
+    <!-- <link rel="stylesheet" href="webjars/bootstrap-material-design/0.2.1/css/material.css"> -->
+    <title>One-WiFi</title>
+</head>
+
+<body ng-controller="MainCtrl">
+<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#b-menu-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">One WiFi</a>
+    </div>
+    <div class="collapse navbar-collapse" id="b-menu-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+			<a href="#/home"><span class="glyphicon glyphicon-home"></span>  {{'NAV_HOME' | translate}}</a>
+		</li>	  
+        <li ng-show="!isloggedin">
+			<a href="#/login"><span class="glyphicon glyphicon-user"></span>  {{'NAV_LOGIN' | translate}}</a>
+		</li>			
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown"><span>Language</span><b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href ng-click="changeLanguage('en')">English</a></li>
+            <li><a href ng-click="changeLanguage('ch')">Chinese</a></li>			
+          </ul>
+        </li>	        
+      </ul>
+    </div> <!-- /.nav-collapse -->
+  </div> <!-- /.container -->
+</div> <!-- /.navbar -->
+
+<div class="layout row row-offcanvas row-offcanvas-right">
+
+ 	<!-- column 3 (sidebar for Normal User - Start ) -->
+  	<div ng-show="isloggedin && role=='User'" class="col-sm-2 sidebar-offcanvas" id="sidebar">
+		<div class="panel panel-default">
+			<div class="panel-heading">{{loggedInUserName}}</div>
+			<div class="list-group" role="navigation">
+			  <a href="#/personal/accountsummary" class="list-group-item"><span class="glyphicon glyphicon-camera pull-left icon1"></span>{{'MENU_ACCOUNTSUMMARY' | translate}}</a>	
+	  		  <a href="#/personal/topup" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>{{'MENU_TOPUP' | translate}}</a>	  		  
+			  <a href="#/personal/topuphistory" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>Topup History</a>
+			  <a href="#/personal/traffichistory" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>{{'MENU_TRAFFICHISTORY' | translate}}</a>			  
+			  <a href="#/personal/getinfo" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>{{'MENU_USERINFO' | translate}}</a>
+			  <a href="#/personal/changepassword" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>{{'MENU_CHANGEPASSWORD' | translate}}</a>
+			  <a href="#/personal/logout" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>{{'MENU_LOGOUT' | translate}}</a>	  
+			</div>
+		</div>
+	</div>
+ 	<!-- column 3 (sidebar for Normal User - End ) -->	
+	<!-- column 3 (sidebar for Partner User - Start ) -->
+  	<div ng-show="isloggedin && role=='Partner'" class="col-sm-2 sidebar-offcanvas" id="sidebar">
+		<div class="panel panel-default">
+			<div class="panel-heading">{{loggedInUserName}} - Partner</div>
+			<div class="list-group" role="navigation">
+			  <a href="#/personal/getinfo" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>{{'MENU_PARTNERINFO' | translate}}</a>
+			  <a href="#/partner/allupload" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>Upload</a>		
+              <a href="#/partner/deviceupload" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>&nbsp;&nbsp;&nbsp;&nbsp;Upload Devices</a>
+              <a href="#/partner/retailerupload" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>&nbsp;&nbsp;&nbsp;&nbsp;Upload Retailers</a>
+              <a href="#/partner/retailerdevicesupload" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>&nbsp;&nbsp;&nbsp;&nbsp;Upload Retailer Devices</a>
+              <a href="#/partner/pricingupload" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>&nbsp;&nbsp;&nbsp;&nbsp;Upload Pricing</a>
+			  <a href="#/personal/changepassword" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>{{'MENU_CHANGEPASSWORD' | translate}}</a>
+			  <a href="#/personal/logout" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>{{'MENU_LOGOUT' | translate}}</a>
+			</div>
+		</div>
+	</div>	
+ 	<!-- column 3 (sidebar for Partner User - End ) -->
+	<!-- column 3 (sidebar for Retailer User - Start ) --> 	
+  	<div ng-show="isloggedin && role=='Retailer'" class="col-sm-2 sidebar-offcanvas" id="sidebar">
+		<div class="panel panel-default">
+			<div class="panel-heading">{{loggedInUserName}} - Retailer</div>
+			<div class="list-group" role="navigation">
+			  <a href="#/personal/getinfo" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>{{'MENU_RETAILERINFO' | translate}}</a>
+			  <a href="#/partner/retailerbuy" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>{{'MENU_BUYDEVICE' | translate}}</a>			  
+			  <a href="#/personal/changepassword" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>{{'MENU_CHANGEPASSWORD' | translate}}</a>
+			  <a href="#/personal/logout" class="list-group-item"><span class="glyphicon glyphicon-camera icon1"></span>{{'MENU_LOGOUT' | translate}}</a>	  
+			</div>
+		</div>
+	</div>	
+  	<div ng-show="!isloggedin" class="col-sm-2 sidebar-offcanvas" id="sidebar">
+	</div>		
+	<!-- column 3 (sidebar for Retailer User - end ) -->		
+	<div class="col-xs-12 col-sm-10">
+	    <div class="row">
+	    	<div ng-view></div>
+		</div>
+	</div>
+</div>
+<div id="footer">
+  <div class="container">
+    <p class="credit">Term of Use . Privacy Policy  Copyright 2011-2015 GlocalMe.com, All Rights Reserved.</p>
+  </div>
+</div>
+
+<script type="text/javascript" src="webjars/jquery/2.1.1/jquery.js"></script>
+<script type="text/javascript" src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="webjars/angularjs/1.3.8/angular.min.js"></script>
+<script type="text/javascript" src="webjars/angularjs/1.3.8/angular-route.min.js"></script>
+<script type="text/javascript" src="webjars/angularjs/1.3.8/angular-resource.min.js"></script>
+<script type="text/javascript" src="webjars/angular-ui-bootstrap/0.13.3/ui-bootstrap.js"></script>
+<script type="text/javascript" src="webjars/angular-ui-bootstrap/0.13.3/ui-bootstrap-tpls.js"></script>
+<script type="text/javascript" src="webjars/bootstrap-material-design/0.2.1/js/material.js"></script> 
+<script type="text/javascript" src="webjars/angular-translate/2.7.2/angular-translate.js"></script>
+<script type="text/javascript" src="webjars/ui-grid/3.0.7/ui-grid.js"></script>
+<script type="text/javascript" src="resources/js/constants.js"></script>
+<script type="text/javascript" src="resources/js/angular.country-select.js"></script>
+<script type="text/javascript" src="resources/js/app.js"></script>
+<script type="text/javascript" src="resources/js/controllers/partner.js"></script>
+<script type="text/javascript" src="resources/js/controllers/retailer.js"></script>
+<script type="text/javascript" src="resources/js/controllers/login.js"></script>
+<script type="text/javascript" src="resources/js/FileSaver.js"></script>
+<script type="text/javascript" src="resources/js/services/onewifiservices.js"></script>
+<script>
+	$(function () {
+		$(".list-group a").click(function () {
+			var $lists = $('.list-group a')
+			$lists.filter(".active").removeClass("active");
+			$(this).toggleClass("active");
+		});
+	
+	});
+</script>
+</body>
+</html>

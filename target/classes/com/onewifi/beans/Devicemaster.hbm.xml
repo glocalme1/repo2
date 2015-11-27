@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 23, 2015 4:30:43 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.onewifi.beans.Devicemaster" table="devicemaster" catalog="onewifi" optimistic-lock="version">
+        <id name="deviceId" type="string">
+            <column name="DeviceId" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="statuscodemaster" class="com.onewifi.beans.Statuscodemaster" fetch="join">
+            <column name="StatusCode" length="3" not-null="true" />
+        </many-to-one>
+        <property name="userCode" type="string">
+            <column name="UserCode" length="50" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="Password" length="20" not-null="true" />
+        </property>
+        <property name="partnerCode" type="string">
+            <column name="PartnerCode" length="50" not-null="true" />
+        </property>
+        <property name="imei" type="string">
+            <column name="IMEI" length="25" not-null="true" />
+        </property>
+        <property name="deviceSerialNo" type="string">
+            <column name="DeviceSerialNo" length="25" not-null="true" />
+        </property>
+        <property name="deviceBoundStatus" type="string">
+            <column name="DeviceBoundStatus" length="20" />
+        </property>
+        <set name="customerbalances" table="customerbalance" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DeviceId" length="20" not-null="true" />
+            </key>
+            <one-to-many class="com.onewifi.beans.Customerbalance" />
+        </set>
+        <set name="customerdevices" table="customerdevice" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="DeviceId" length="20" not-null="true" />
+            </key>
+            <one-to-many class="com.onewifi.beans.Customerdevice" />
+        </set>
+        <set name="customertopups" table="customertopup" inverse="true" lazy="false" fetch="select" order-by="topupType, topupDate asc">
+            <key>
+                <column name="DeviceId" length="20" not-null="true" />
+            </key>
+            <one-to-many class="com.onewifi.beans.Customertopup" />
+        </set>
+    </class>
+</hibernate-mapping>

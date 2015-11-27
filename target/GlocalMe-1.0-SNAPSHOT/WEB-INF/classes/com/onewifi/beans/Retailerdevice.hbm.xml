@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 23, 2015 4:30:43 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.onewifi.beans.Retailerdevice" table="retailerdevice" catalog="onewifi" optimistic-lock="version">
+        <composite-id name="id" class="com.onewifi.beans.RetailerdeviceId">
+            <key-property name="assignerId" type="string">
+                <column name="AssignerId" length="50" />
+            </key-property>
+            <key-property name="deviceSerialNo" type="string">
+                <column name="DeviceSerialNo" length="25" />
+            </key-property>
+        </composite-id>
+        <property name="purpose" type="string">
+            <column name="Purpose" length="25" not-null="true" />
+        </property>
+        <property name="days" type="double">
+            <column name="Days" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="price" type="double">
+            <column name="Price" precision="22" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

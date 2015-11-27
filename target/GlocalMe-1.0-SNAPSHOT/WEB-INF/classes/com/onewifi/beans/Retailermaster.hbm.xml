@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 23, 2015 4:30:43 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.onewifi.beans.Retailermaster" table="retailermaster" catalog="onewifi" optimistic-lock="version">
+        <id name="retailerId" type="string">
+            <column name="RetailerId" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="loginId" type="string">
+            <column name="LoginId" length="50" not-null="true" />
+        </property>
+        <property name="userName" type="string">
+            <column name="UserName" length="50" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="Password" length="64" not-null="true" />
+        </property>
+        <property name="coyRetailerName" type="string">
+            <column name="COY_Retailer_Name" length="100" not-null="true" />
+        </property>
+        <property name="coyContactNumber" type="java.lang.Integer">
+            <column name="COY_Contact_Number" />
+        </property>
+        <property name="directorName" type="string">
+            <column name="DirectorName" length="100" not-null="true" />
+        </property>
+        <property name="identityId" type="string">
+            <column name="IdentityId" length="10" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="Address" length="200" not-null="true" />
+        </property>
+        <property name="retailerContactNumber" type="java.lang.Integer">
+            <column name="Retailer_Contact_Number" />
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="CreationDate" length="19" not-null="true" />
+        </property>
+        <property name="secretQuestion1" type="string">
+            <column name="SecretQuestion1" length="50" not-null="true" />
+        </property>
+        <property name="secretQuestionAnswer1" type="string">
+            <column name="SecretQuestionAnswer1" length="50" not-null="true" />
+        </property>
+        <property name="secretQuestion2" type="string">
+            <column name="SecretQuestion2" length="50" not-null="true" />
+        </property>
+        <property name="secretQuestionAnswer2" type="string">
+            <column name="SecretQuestionAnswer2" length="50" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

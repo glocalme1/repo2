@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 18, 2015 8:56:51 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.onewifi.beans.Userroletable" table="userroletable" catalog="" optimistic-lock="version">
+        <composite-id name="id" class="com.onewifi.beans.UserroletableId">
+            <key-property name="loginId" type="string">
+                <column name="LoginId" length="50" />
+            </key-property>
+            <key-property name="roleName" type="string">
+                <column name="RoleName" length="20" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

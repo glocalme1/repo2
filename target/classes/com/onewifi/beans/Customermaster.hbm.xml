@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 23, 2015 4:30:43 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.onewifi.beans.Customermaster" table="customermaster" catalog="onewifi" optimistic-lock="version">
+        <id name="customerId" type="string">
+            <column name="CustomerId" length="60" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="statuscodemaster" class="com.onewifi.beans.Statuscodemaster" fetch="select">
+            <column name="StatusCode" length="3" not-null="true" />
+        </many-to-one>
+        <property name="loginId" type="string">
+            <column name="LoginId" length="50" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="Password" length="64" not-null="true" />
+        </property>
+        <property name="fullName" type="string">
+            <column name="FullName" length="50" not-null="true" />
+        </property>
+        <property name="identityType" type="string">
+            <column name="IdentityType" length="15" not-null="true" />
+        </property>
+        <property name="identityId" type="string">
+            <column name="IdentityId" length="20" not-null="true" />
+        </property>
+        <property name="identityImage" type="binary">
+            <column name="Identity_Image" />
+        </property>
+        <property name="address" type="string">
+            <column name="Address" length="200" not-null="true" />
+        </property>
+        <property name="dob" type="timestamp">
+            <column name="DOB" length="19" />
+        </property>
+        <property name="contactNo" type="java.lang.Integer">
+            <column name="ContactNo" />
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="CreationDate" length="19" not-null="true" />
+        </property>
+        <property name="secretQuestion1" type="string">
+            <column name="SecretQuestion1" length="50" not-null="true" />
+        </property>
+        <property name="secretQuestionAnswer1" type="string">
+            <column name="SecretQuestionAnswer1" length="50" not-null="true" />
+        </property>
+        <property name="secretQuestion2" type="string">
+            <column name="SecretQuestion2" length="50" not-null="true" />
+        </property>
+        <property name="secretQuestionAnswer2" type="string">
+            <column name="SecretQuestionAnswer2" length="50" not-null="true" />
+        </property>
+        <set name="customerbalances" table="customerbalance" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CustomerId" length="60" not-null="true" />
+            </key>
+            <one-to-many class="com.onewifi.beans.Customerbalance" />
+        </set>
+        <set name="customerdevices" table="customerdevice" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="CustomerId" length="60" not-null="true" />
+            </key>
+            <one-to-many class="com.onewifi.beans.Customerdevice" />
+        </set>
+        <set name="customertopups" table="customertopup" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="CustomerId" length="60" not-null="true" />
+            </key>
+            <one-to-many class="com.onewifi.beans.Customertopup" />
+        </set>
+    </class>
+</hibernate-mapping>

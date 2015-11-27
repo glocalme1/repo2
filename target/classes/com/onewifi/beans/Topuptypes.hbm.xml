@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 23, 2015 4:30:43 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.onewifi.beans.Topuptypes" table="topuptypes" catalog="onewifi" optimistic-lock="version">
+        <id name="topupType" type="string">
+            <column name="TopupType" length="3" />
+            <generator class="assigned" />
+        </id>
+        <property name="topupTypeName" type="string">
+            <column name="TopupType_Name" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>
